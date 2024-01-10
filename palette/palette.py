@@ -122,7 +122,7 @@ class Palette(commands.Cog):
                     anchor="mb",
                 )
             start = start + dimensions[1]
-        final = final.resize((500 * len(colors), 500), resample=Image.ANTIALIAS)
+        final = final.resize((500 * len(colors), 500), resample=Image.LANCZOS)
         fileObj = BytesIO()
         final.save(fileObj, "png")
         fileObj.name = "palette.png"
